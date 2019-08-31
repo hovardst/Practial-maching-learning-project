@@ -2,6 +2,7 @@ library(ggplot2)
 library(caret)
 library(AppliedPredictiveModeling)
 library(kernlab)
+library(dplyr)
 
 #function to draw confusion matrix based on  https://stackoverflow.com/questions/23891140/r-how-to-visualize-confusion-matrix-using-the-caret-package 
 #and https://stackoverflow.com/questions/21589991/plot-a-confusion-matrix-with-color-and-frequency-in-r
@@ -138,3 +139,19 @@ confMatPlot(RFcm, "Confusion matrix - RF modell")
 #de-registrer parallel cluster
 stopCluster(cluster)
 registerDoSEQ()
+
+#create prediction for test set
+
+#mach test data with cleand training data
+RetainCol <- colnames(training_cl[,-56])
+test_cl <- pml_test %>% select(RetainCol)
+
+RFmodell_final_pred = predict(RFmodel, test_cl)
+
+#write file for prediction
+  n = length(RFmodell_final_pred)
+  for(i in 1:n){
+    filename = paste0("problem_id_",i,".txt")
+    write.table(RFmodell_final_pred[i],file=filename,quote=FALSE,row.names=FALSE,col.names=FALSE)
+  }
+
