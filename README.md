@@ -1,3 +1,6 @@
-# Practial-maching-learning-project
-Code and writeup up for week 4 project. 
+#Practical Machin Learning course - Assignemnt Week 4
+
+## Assignement
+The goal of your project is to predict the manner in which they did the exercise. This is the "classe" variable in the training set. You may use any of the other variables to predict with. You should create a report describing how you built your model, how you used cross validation, what you think the expected out of sample error is, and why you made the choices you did. You will also use your prediction model to predict 20 different test cases.
+
 ![Confusion Matrix LDA modell](https://github.com/hovardst/Practial-maching-learning-project/blob/master/Confusion%20matrix%20-%20LDA%20modell.png)
