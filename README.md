@@ -31,3 +31,12 @@ First I tried to train a model based on the Linear Discriminant Analysis (LDA) m
 The confusion matrix for the model is
 
 ![Confusion Matrix LDA modell](https://github.com/hovardst/Practial-maching-learning-project/blob/master/Confusion%20matrix%20-%20LDA%20modell.png)
+
+As the accuracy is only 0.733, the out of sample error is estimated to 0,267. This is hence not a very accurate model. 
+
+
+Running the same dataset with the Random Forrest (RF) method gave the following confusion matrix
+
+![Confusion Matrix RF modell](https://github.com/hovardst/Practial-maching-learning-project/blob/master/Confusion%20matrix%20-%20RF%20modell.png)
+
+With this method, the accuracy is 0.998, indicating an out of sample error of 0,002. This seems like a much more accurate model, and I used the RF model to predict the 20 different test cases. The result is in the file “Final prediction.csv” in this repository. 
